@@ -1,6 +1,6 @@
-package desafioFinal;
+package GerenciadorDeEstoque;
 
-public class Produtos {
+public class Produto {
 	private double precoCusto;
 	private double precoVenda;
 	private String nome;
@@ -9,7 +9,7 @@ public class Produtos {
 	private String origin ;
 	private String aroma;
 	private String parteDeCasa;
-	public Produtos(double precoCusto, double precoVenda, String nome, String codigoDeBarra, String dataValidade,
+	public Produto(double precoCusto, double precoVenda, String nome, String codigoDeBarra, String dataValidade,
 			String origin, String aroma, String parteDeCasa) {
 		
 		super();
