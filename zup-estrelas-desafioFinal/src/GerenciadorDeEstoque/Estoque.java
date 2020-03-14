@@ -1,5 +1,6 @@
 package GerenciadorDeEstoque;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface Estoque {
@@ -13,7 +14,7 @@ public interface Estoque {
 	
 	public Produto consultaProduto(Integer codigoDeBarras);
 	
-	public List<Produto> listaProdutos();
+	public List<Produto> listaProdutos()throws IOException;
 	
 	public boolean gravaListaProdutos();
 	
