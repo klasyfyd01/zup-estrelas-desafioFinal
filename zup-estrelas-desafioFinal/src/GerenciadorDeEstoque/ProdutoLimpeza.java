@@ -4,8 +4,7 @@ public class ProdutoLimpeza extends Produto {
 	private String aroma;
 	private String parteDeCasa;
 
-	public ProdutoLimpeza(double precoCusto, double precoVenda, String nome, String codigoDeBarra,
-			String dataValidade) {
+	public ProdutoLimpeza(double precoCusto, double precoVenda, String nome, int codigoDeBarra, String dataValidade) {
 		super(precoCusto, precoVenda, nome, codigoDeBarra, dataValidade);
 		// TODO Auto-generated constructor stub
 	}

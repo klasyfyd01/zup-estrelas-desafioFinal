@@ -12,11 +12,13 @@ public interface Estoque {
 
 	public boolean alteraPrecopoduto(float percentagem, boolean aumentaPreco, int codigoDeBarras);
 	
-	public Produto consultaProduto(Integer codigoDeBarras);
+	public Produto consultaProduto(Integer codigoDeBarras) throws Exception;
 	
 	public List<Produto> listaProdutos();
 	
 	public boolean gravaListaProdutos() throws IOException;
 	
 	public int quantidadeProdutos();
+
+	
 }

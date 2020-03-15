@@ -1,26 +1,28 @@
 package GerenciadorDeEstoque;
-import java.io.FileReader;
+
 import java.io.FileWriter;
-import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EstoqueAlimenticio implements Estoque{
-List<Produto>produtosAlimenticios = new ArrayList<Produto>();
+public class EstoqueAlimenticio implements Estoque {
+	List<Produto> produtosAlimenticios = new ArrayList<Produto>();
+
 	@Override
 	public void alteraPrecoProdutos(float percentagem, boolean aumenta) {
-		// TODO Auto-generated method stub
-		
+		for (int raise = 0; raise < produtosAlimenticios.size(); raise++) {
+			if (aumenta == true) {
+				this.produtosAlimenticios.get(raise).aumentaPreco(percentagem);
+
+			} else {
+				this.produtosAlimenticios.get(raise).diminuirPreco(percentagem);
+			}
+		}
+
 	}
 
 	@Override
 	public boolean cadstroProduto(Produto produto) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean removeProduto(Integer codigoDeBarras) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -39,20 +41,50 @@ List<Produto>produtosAlimenticios = new ArrayList<Produto>();
 
 	@Override
 	public List<Produto> listaProdutos() {
-		
+
 		return produtosAlimenticios;
 	}
 
 	@Override
-	public boolean gravaListaProdutos() throws IOException{
-		FileWriter novoListaProdutos = new FileWriter(arquivo.txt );
-		return false;
+
+	public boolean gravaListaProdutos() {
+		try {
+			FileWriter arquivo = new FileWriter("ListaEstoqueLimpeza.txt");
+			PrintWriter gravaArquivo = new PrintWriter(arquivo);
+			gravaArquivo.print("produtos em estoque");
+			for (int i = 0; i < produtosAlimenticios.size(); i++) {
+				gravaArquivo.print("\n");
+				gravaArquivo.print(produtosAlimenticios.get(i));
+			}
+			arquivo.close();
+			gravaArquivo.close();
+
+		} catch (Exception e) {
+			System.out.println("Erro ao gravar o produto!");
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
 	}
 
 	@Override
 	public int quantidadeProdutos() {
-		// TODO Auto-generated method stub
+
 		return 0;
 	}
-	
+
+	@Override
+	public boolean removeProduto(Integer codigoDeBarra) {
+		for (int i = 0; i < produtosAlimenticios.size(); i++) {
+			if (produtosAlimenticios.get(i).getCodigoDeBarra() == codigoDeBarra) {
+				produtosAlimenticios.remove(i);
+				return true;
+			}
+
+		}
+		return false;
+
+	}
+
 }

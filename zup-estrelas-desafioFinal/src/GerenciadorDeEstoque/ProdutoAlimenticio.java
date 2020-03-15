@@ -3,7 +3,7 @@ package GerenciadorDeEstoque;
 public class ProdutoAlimenticio extends Produto {
 	private String origin;
 
-	public ProdutoAlimenticio(double precoCusto, double precoVenda, String nome, String codigoDeBarra,
+	public ProdutoAlimenticio(double precoCusto, double precoVenda, String nome, int codigoDeBarra,
 			String dataValidade) {
 		super(precoCusto, precoVenda, nome, codigoDeBarra, dataValidade);
 		// TODO Auto-generated constructor stub
