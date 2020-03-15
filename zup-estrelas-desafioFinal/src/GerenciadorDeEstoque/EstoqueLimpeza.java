@@ -1,9 +1,11 @@
 package GerenciadorDeEstoque;
 
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EstoqueLimpeza implements Estoque {
-
+List<Produto>produtosLimpeza = new ArrayList<Produto>();
 
 @Override
 public void alteraPrecoProdutos(float percentagem, boolean aumenta) {
@@ -38,13 +40,13 @@ public Produto consultaProduto(Integer codigoDeBarras) {
 @Override
 public List<Produto> listaProdutos() {
 	// TODO Auto-generated method stub
-	return null;
+	return produtosLimpeza;
 }
 
 @Override
 public boolean gravaListaProdutos() {
-	// TODO Auto-generated method stub
-	return false;
+	FileWriter produtos = new FileWriter(.txt);
+	return false ;
 }
 
 @Override

@@ -14,9 +14,9 @@ public interface Estoque {
 	
 	public Produto consultaProduto(Integer codigoDeBarras);
 	
-	public List<Produto> listaProdutos()throws IOException;
+	public List<Produto> listaProdutos();
 	
-	public boolean gravaListaProdutos();
+	public boolean gravaListaProdutos() throws IOException;
 	
 	public int quantidadeProdutos();
 }
