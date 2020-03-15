@@ -4,13 +4,10 @@ public class ProdutoLimpeza extends Produto {
 	private String aroma;
 	private String parteDeCasa;
 
-	public ProdutoLimpeza(double precoCusto, double precoVenda, String nome, String codigoDeBarra, String dataValidade,
-			String origin, String aroma, String parteDeCasa) {
-		super(precoCusto, precoVenda, nome, codigoDeBarra, dataValidade, origin, aroma, parteDeCasa);
-
-		this.aroma = aroma;
-		this.parteDeCasa = parteDeCasa;
-
+	public ProdutoLimpeza(double precoCusto, double precoVenda, String nome, String codigoDeBarra,
+			String dataValidade) {
+		super(precoCusto, precoVenda, nome, codigoDeBarra, dataValidade);
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getAroma() {

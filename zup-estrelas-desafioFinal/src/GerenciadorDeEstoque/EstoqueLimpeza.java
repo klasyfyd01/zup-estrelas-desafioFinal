@@ -2,10 +2,8 @@ package GerenciadorDeEstoque;
 
 import java.util.List;
 
-public class estoqueLimpeza implements Estoque {
-public void produtosAlimenticio() {
-	
-}
+public class EstoqueLimpeza implements Estoque {
+
 
 @Override
 public void alteraPrecoProdutos(float percentagem, boolean aumenta) {

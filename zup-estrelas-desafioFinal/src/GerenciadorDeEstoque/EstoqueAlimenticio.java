@@ -5,8 +5,7 @@ import java.io.FileWriter;
 import java.util.List;
 
 public class EstoqueAlimenticio implements Estoque {
-public void produtosAlimenticio() {
-}
+
 
 @Override
 public void alteraPrecoProdutos(float percentagem, boolean aumenta) {
