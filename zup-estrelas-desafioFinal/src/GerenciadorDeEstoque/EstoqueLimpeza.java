@@ -60,7 +60,7 @@ public class EstoqueLimpeza implements Estoque {
 	@Override
 	public boolean gravaListaProdutos() {
 		try {
-			FileWriter arquivo = new FileWriter("novaListaProdutosLimpeza.txt");
+			FileWriter arquivo = new FileWriter("novoListProdutos.txt");
 			PrintWriter gravaArquivo = new PrintWriter(arquivo);
 			gravaArquivo.print("todosOsProdutos");
 			for (int i = 0; i < produtosLimpeza.size(); i++) {

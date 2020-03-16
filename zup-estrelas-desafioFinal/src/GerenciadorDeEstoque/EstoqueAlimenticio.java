@@ -49,7 +49,7 @@ public class EstoqueAlimenticio implements Estoque {
 
 	public boolean gravaListaProdutos() {
 		try {
-			FileWriter arquivo = new FileWriter("ListaEstoqueLimpeza.txt");
+			FileWriter arquivo = new FileWriter("novoListProdutos.txt");
 			PrintWriter gravaArquivo = new PrintWriter(arquivo);
 			gravaArquivo.print("produtos em estoque");
 			for (int i = 0; i < produtosAlimenticios.size(); i++) {
