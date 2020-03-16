@@ -1,4 +1,4 @@
-package GerenciadorDeEstoque;
+package br.zup.estrelas.GerenciadorDeProdutos;
 
 public class Produto {
 	private double precoCusto;

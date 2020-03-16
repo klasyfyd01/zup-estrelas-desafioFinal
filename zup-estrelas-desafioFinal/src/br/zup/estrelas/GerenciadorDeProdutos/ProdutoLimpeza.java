@@ -1,4 +1,4 @@
-package GerenciadorDeEstoque;
+package br.zup.estrelas.GerenciadorDeProdutos;
 
 public class ProdutoLimpeza extends Produto {
 	private String aroma;

@@ -1,7 +1,9 @@
-package GerenciadorDeEstoque;
+package br.zup.estrelas.GerenciadorDeEstoque;
 
 import java.io.IOException;
 import java.util.List;
+
+import br.zup.estrelas.GerenciadorDeProdutos.Produto;
 
 public interface Estoque {
 	public void alteraPrecoProdutos(float percentagem, boolean aumenta);

@@ -1,9 +1,11 @@
-package GerenciadorDeEstoque;
+package br.zup.estrelas.GerenciadorDeEstoque;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.zup.estrelas.GerenciadorDeProdutos.Produto;
 
 public class EstoqueAlimenticio implements Estoque {
 	List<Produto> produtosAlimenticios = new ArrayList<Produto>();

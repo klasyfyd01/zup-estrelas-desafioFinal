@@ -1,7 +1,10 @@
-package GerenciadorDeEstoque;
+package br.zup.estrelas.programaPrincipal;
 
 import java.io.IOException;
 import java.util.Scanner;
+
+import br.zup.estrelas.GerenciadorDeEstoque.EstoqueAlimenticio;
+import br.zup.estrelas.GerenciadorDeEstoque.EstoqueLimpeza;
 
 public class PrincipalListaGerenciadorProdutos {
 	static Scanner in = new Scanner(System.in);

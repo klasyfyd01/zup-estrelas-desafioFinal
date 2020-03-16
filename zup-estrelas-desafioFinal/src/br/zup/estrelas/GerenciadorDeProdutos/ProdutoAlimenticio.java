@@ -1,4 +1,4 @@
-package GerenciadorDeEstoque;
+package br.zup.estrelas.GerenciadorDeProdutos;
 
 public class ProdutoAlimenticio extends Produto {
 	private String origin;
