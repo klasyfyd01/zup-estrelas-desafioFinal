@@ -3,10 +3,11 @@ package br.zup.estrelas.GerenciadorDeProdutos;
 public class ProdutoAlimenticio extends Produto {
 	private String origin;
 
-	public ProdutoAlimenticio(double precoCusto, double precoVenda, String nome, int codigoDeBarra,
-			String dataValidade) {
+	
+	public ProdutoAlimenticio(double precoCusto, double precoVenda, String nome, int codigoDeBarra, String dataValidade,
+			String origin) {
 		super(precoCusto, precoVenda, nome, codigoDeBarra, dataValidade);
-		// TODO Auto-generated constructor stub
+		this.origin = origin;
 	}
 
 	public String getOrigin() {

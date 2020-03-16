@@ -12,12 +12,15 @@ public class EstoqueAlimenticio implements Estoque {
 
 	@Override
 	public void alteraPrecoProdutos(float percentagem, boolean aumenta) {
-		for (int raise = 0; raise < produtosAlimenticios.size(); raise++) {
-			if (aumenta == true) {
-				this.produtosAlimenticios.get(raise).aumentaPreco(percentagem);
+		for (int i = 0; i < produtosAlimenticios.size(); i++) {
+			if (aumenta) {
+				produtosAlimenticios.get(i)
+						.setPrecoVenda(produtosAlimenticios.get(i).getPrecoVenda() * (1 + (percentagem / 100)));
 
 			} else {
-				this.produtosAlimenticios.get(raise).diminuirPreco(percentagem);
+				produtosAlimenticios.get(i)
+						.setPrecoVenda(produtosAlimenticios.get(i).getPrecoVenda() * (1 - (percentagem / 100)));
+
 			}
 		}
 
@@ -31,8 +34,15 @@ public class EstoqueAlimenticio implements Estoque {
 
 	@Override
 	public boolean alteraPrecopoduto(float percentagem, boolean aumentaPreco, int codigoDeBarras) {
-		// TODO Auto-generated method stub
-		return false;
+		if (aumenta) {
+			produtosAlimenticios.get(codigoDeBarras).setPrecoVenda(
+					produtosAlimenticios.get(codigoDeBarras).getPrecoVenda() * (1 + (percentagem / 100)));
+
+		} else {
+			produtosAlimenticios.get(codigoDeBarras).setPrecoVenda(
+					produtosAlimenticios.get(codigoDeBarras).getPrecoVenda() * (1 - (percentagem / 100)));
+
+		}
 	}
 
 	@Override

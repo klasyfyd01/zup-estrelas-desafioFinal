@@ -6,18 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.zup.estrelas.GerenciadorDeProdutos.Produto;
+import br.zup.estrelas.GerenciadorDeProdutos.ProdutoLimpeza;
 
 public class EstoqueLimpeza implements Estoque {
-	List<Produto> produtosLimpeza = new ArrayList<Produto>();
+	List<ProdutoLimpeza> produtosLimpeza = new ArrayList<ProdutoLimpeza>();
 
 	@Override
 	public void alteraPrecoProdutos(float percentagem, boolean aumenta) {
-		for (int raise = 0; raise < produtosLimpeza.size(); raise++) {
-			if (aumenta == true) {
-				this.produtosLimpeza.get(raise).aumentaPreco(percentagem);
+		for (int i = 0; i < produtosLimpeza.size(); i++) {
+			if (aumenta) {
+				produtosLimpeza.get(i)
+						.setPrecoVenda(produtosLimpeza.get(i).getPrecoVenda() * (1 + (percentagem / 100)));
 
 			} else {
-				this.produtosLimpeza.get(raise).diminuirPreco(percentagem);
+				produtosLimpeza.get(i)
+						.setPrecoVenda(produtosLimpeza.get(i).getPrecoVenda() * (1 - (percentagem / 100)));
+
 			}
 		}
 	}
@@ -30,17 +34,15 @@ public class EstoqueLimpeza implements Estoque {
 
 	@Override
 	public boolean alteraPrecopoduto(float percentagem, boolean aumentaPreco, int codigoDeBarras) {
-		for (int raise = 0; raise < produtosLimpeza.size(); raise++) {
-			if (aumentaPreco == true) {
-				System.out.println("");
-			}
+		if (aumenta) {
+			produtosLimpeza.get(codigoDeBarras)
+					.setPrecoVenda(produtosLimpeza.get(codigoDeBarras).getPrecoVenda() * (1 + (percentagem / 100)));
+
+		} else {
+			produtosLimpeza.get(codigoDeBarras)
+					.setPrecoVenda(produtosLimpeza.get(codigoDeBarras).getPrecoVenda() * (1 - (percentagem / 100)));
+
 		}
-		/*
-		 * Altera o preço de um produto com base em uma porcentagem, se a variável
-		 * aumenta for verdadeira aumenta o preço de venda e se for false deverá
-		 * diminuir o preço de venda.
-		 */
-		return false;
 	}
 
 	@Override

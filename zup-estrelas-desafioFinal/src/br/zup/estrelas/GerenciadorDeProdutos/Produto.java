@@ -16,14 +16,6 @@ public class Produto {
 		this.dataValidade = dataValidade;
 	}
 
-	public void aumentaPreco(float percentagem) {
-		this.precoVenda += precoVenda * percentagem;
-	}
-
-	public void diminuirPreco(float percentagem) {
-		this.precoVenda -= precoVenda * percentagem;
-	}
-
 	public double getPrecoCusto() {
 		return precoCusto;
 	}
@@ -63,5 +55,7 @@ public class Produto {
 	public void setDataValidade(String dataValidade) {
 		this.dataValidade = dataValidade;
 	}
+
+	
 
 }

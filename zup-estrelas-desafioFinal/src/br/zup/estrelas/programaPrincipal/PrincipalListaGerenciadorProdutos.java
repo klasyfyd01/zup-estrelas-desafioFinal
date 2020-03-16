@@ -1,6 +1,5 @@
 package br.zup.estrelas.programaPrincipal;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import br.zup.estrelas.GerenciadorDeEstoque.EstoqueAlimenticio;
@@ -9,7 +8,7 @@ import br.zup.estrelas.GerenciadorDeEstoque.EstoqueLimpeza;
 public class PrincipalListaGerenciadorProdutos {
 	static Scanner in = new Scanner(System.in);
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  {
 		// TODO Auto-generated method stub
 		int option;
 
@@ -27,7 +26,7 @@ public class PrincipalListaGerenciadorProdutos {
 
 			switch (option) {
 			case 1:
-				mostraMenuDeProdutosAlimenticios();
+				mostraMenuDeProdutosAlimenticios( );
 				break;
 			case 2:
 				mostraMenuDeProdutosDeLimpeza();
@@ -35,7 +34,7 @@ public class PrincipalListaGerenciadorProdutos {
 			default:
 				System.out.println("opcao invalida");
 			}
-		} while (option != 3);
+		} while (option != 0);
 
 		System.out.println("Obrigado e bom descanso");
 	}
@@ -44,46 +43,34 @@ public class PrincipalListaGerenciadorProdutos {
 		EstoqueLimpeza estoqueLimpeza = new EstoqueLimpeza();
 		int subMenuLimpeza = 0;
 		do {
-
 			System.out.println("1 - Cadastrar produtos");
-			System.out.println("2 - Remover produtos");
-			System.out.println("3 - Listar produtos");
-			System.out.println("4 - Alterar preço dos produtos");
-			System.out.println("5- Grava na lista ");
-			System.out.println("6 - Quantidade de produtos");
-			System.out.println("7 - Altera preco produto");
-			System.out.println("8 - Voltar ao menu anterior");
+			String nome = in.next();
+			System.out.println("Digite a data de fabricaçao do produto");
+			String data = in.next();
+			System.out.println("Digite o preco");
+			double preco = in.nextDouble();
+
 			switch (subMenuLimpeza) {
 			case 1:
-				System.out.println("1 - Cadastrar produtos");
+				extracted();
 				break;
-			case 2:
-				System.out.println("2 - Remover produtos");
-				break;
-			case 3:
-				System.out.println("3 - Listar produtos");
-				break;
-			case 4:
-				System.out.println("4 - Alterar preço dos produtos");
-				break;
-			case 5:
-				System.out.println("5- Grava na lista ");
-				break;
-			case 6:
-				System.out.println("6 - Quantidade de produtos");
-				break;
-			case 7:
-				System.out.println("7 - Altera preco produto");
-				break;
-			case 8:
-				System.out.println("8 - Voltar ao menu anterior");
-				break;
-			default:
-				System.out.println("Escolhe uma opcao valida");
+
+			
 			}
 
 		} while (subMenuLimpeza >= 8);
 		System.out.println("Obrigado e bom descanso");
+	}
+
+	private static void extracted() {
+		System.out.println("1 - Cadastrar produtos");
+		System.out.println("2 - Remover produtos");
+		System.out.println("3 - Listar produtos");
+		System.out.println("4 - Alterar preço dos produtos");
+		System.out.println("5- Grava na lista ");
+		System.out.println("6 - Quantidade de produtos");
+		System.out.println("7 - Altera preco produto");
+		System.out.println("8 - Voltar ao menu anterior");
 	}
 
 	private static void mostraMenuDeProdutosAlimenticios() {
@@ -91,14 +78,7 @@ public class PrincipalListaGerenciadorProdutos {
 		int subMenuAlimenticio = 0;
 		do {
 
-			System.out.println("1 - Cadastrar produtos");
-			System.out.println("2 - Remover produtos");
-			System.out.println("3 - Listar produtos");
-			System.out.println("4 - Alterar preço dos produtos");
-			System.out.println("5- Grava na lista ");
-			System.out.println("6 - Quantidade de produtos");
-			System.out.println("7 - Altera preco produto");
-			System.out.println("8 - Voltar ao menu anterior");
+			extracted();
 
 		} while (subMenuAlimenticio >= 8);
 
