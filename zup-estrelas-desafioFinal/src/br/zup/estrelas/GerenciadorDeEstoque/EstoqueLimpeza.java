@@ -9,7 +9,7 @@ import br.zup.estrelas.GerenciadorDeProdutos.Produto;
 import br.zup.estrelas.GerenciadorDeProdutos.ProdutoLimpeza;
 
 public class EstoqueLimpeza implements Estoque {
-	List<ProdutoLimpeza> produtosLimpeza = new ArrayList<ProdutoLimpeza>();
+	List<Produto> produtosLimpeza = new ArrayList<Produto>();
 
 	@Override
 	public void alteraPrecoProdutos(float percentagem, boolean aumenta) {
@@ -34,7 +34,7 @@ public class EstoqueLimpeza implements Estoque {
 
 	@Override
 	public boolean alteraPrecopoduto(float percentagem, boolean aumentaPreco, int codigoDeBarras) {
-		if (aumenta) {
+		if (aumentaPreco) {
 			produtosLimpeza.get(codigoDeBarras)
 					.setPrecoVenda(produtosLimpeza.get(codigoDeBarras).getPrecoVenda() * (1 + (percentagem / 100)));
 
@@ -43,6 +43,7 @@ public class EstoqueLimpeza implements Estoque {
 					.setPrecoVenda(produtosLimpeza.get(codigoDeBarras).getPrecoVenda() * (1 - (percentagem / 100)));
 
 		}
+		return true;
 	}
 
 	@Override
@@ -57,6 +58,7 @@ public class EstoqueLimpeza implements Estoque {
 
 	@Override
 	public List<Produto> listaProdutos() {
+		// XXX: Pq esse TODO está aqui?
 		// TODO Auto-generated method stub
 		return produtosLimpeza;
 	}
@@ -85,12 +87,14 @@ public class EstoqueLimpeza implements Estoque {
 
 	@Override
 	public int quantidadeProdutos() {
+		// XXX: Pq esse TODO está aqui?
 		// TODO Auto-generated method stub
 		return produtosLimpeza.size();
 	}
 
 	@Override
 	public boolean removeProduto(Integer codigoDeBarras) {
+		this.produtosLimpeza.add(new ProdutoLimpeza(1, 2, "Teste", 12345, "02", "teste", "sala"));
 		for (int i = 0; i < produtosLimpeza.size(); i++) {
 			if (produtosLimpeza.get(i).getCodigoDeBarra() == codigoDeBarras) {
 				produtosLimpeza.remove(i);

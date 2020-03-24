@@ -9,6 +9,7 @@ public class PrincipalListaGerenciadorProdutos {
 	static Scanner in = new Scanner(System.in);
 
 	public static void main(String[] args)  {
+		// XXX: Por que esse TODO está aqui?
 		// TODO Auto-generated method stub
 		int option;
 
@@ -40,9 +41,12 @@ public class PrincipalListaGerenciadorProdutos {
 	}
 
 	private static void mostraMenuDeProdutosDeLimpeza() {
+		// XXX: Inicializar o Estoque de Limpeza aqui faz com que quando sairmos do método
+		// ele se perca.
 		EstoqueLimpeza estoqueLimpeza = new EstoqueLimpeza();
 		int subMenuLimpeza = 0;
 		do {
+			//XXX: Primeiro você deve apresentar o menu e só depois iniciar o cadastro.
 			System.out.println("1 - Cadastrar produtos");
 			String nome = in.next();
 			System.out.println("Digite a data de fabricaçao do produto");
@@ -73,6 +77,7 @@ public class PrincipalListaGerenciadorProdutos {
 		System.out.println("8 - Voltar ao menu anterior");
 	}
 
+	// XXX: O menu não faz nada.
 	private static void mostraMenuDeProdutosAlimenticios() {
 		EstoqueAlimenticio produtAlimenticio = new EstoqueAlimenticio();
 		int subMenuAlimenticio = 0;
@@ -80,6 +85,7 @@ public class PrincipalListaGerenciadorProdutos {
 
 			extracted();
 
+		//XXX: Essa condição não é correta considerando as opções do método extracted
 		} while (subMenuAlimenticio >= 8);
 
 	}
