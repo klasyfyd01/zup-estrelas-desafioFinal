@@ -28,13 +28,14 @@ public class EstoqueAlimenticio implements Estoque {
 
 	@Override
 	public boolean cadstroProduto(Produto produto) {
+		// XXX: Não foi implementado.
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean alteraPrecopoduto(float percentagem, boolean aumentaPreco, int codigoDeBarras) {
-		if (aumenta) {
+		if (aumentaPreco) {
 			produtosAlimenticios.get(codigoDeBarras).setPrecoVenda(
 					produtosAlimenticios.get(codigoDeBarras).getPrecoVenda() * (1 + (percentagem / 100)));
 
@@ -43,10 +44,12 @@ public class EstoqueAlimenticio implements Estoque {
 					produtosAlimenticios.get(codigoDeBarras).getPrecoVenda() * (1 - (percentagem / 100)));
 
 		}
+		return true;
 	}
 
 	@Override
 	public Produto consultaProduto(Integer codigoDeBarras) {
+		// XXX: Não foi implementado
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -58,7 +61,6 @@ public class EstoqueAlimenticio implements Estoque {
 	}
 
 	@Override
-
 	public boolean gravaListaProdutos() {
 		try {
 			FileWriter arquivo = new FileWriter("novoListProdutos.txt");
@@ -82,7 +84,7 @@ public class EstoqueAlimenticio implements Estoque {
 
 	@Override
 	public int quantidadeProdutos() {
-
+		// XXX: Não retorna o esperado.
 		return 0;
 	}
 
